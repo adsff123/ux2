@@ -1,0 +1,133 @@
+<div class = 'container'>
+    <!--제목부분-->
+    <div class = 'header' style='text-align:center; background-color:#ff5858;margin-top:3px; margin-bottom:0px'>
+    	<br>
+  	</div>
+      	
+    <div id="mySidenav" class="sidenav" style='background-color:#eeeeee'>
+      <% if user_signed_in? %>
+        <%= current_user.email %>
+        <a href="/users/sign_out"> 로그아웃</a>
+      <% else %>
+        <button onclick= "window.location.href='/users/sign_in'"style='margin-left:17%; border-radius: 5px; width:65%; color:white; text-align:center; background-color:#ff5858' ><h3>로그인 하기</h3></button>
+        <br><br>
+      <% end %>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="/home/index" style='border-style: groove; border-color:white'>Home</a>
+      <a href="/home/notice" style='border-style: groove; border-color:white'>공지사항</a>
+      <a href="/home/dongtab" style='border-style: groove; border-color:white'>동아리</a>
+      <a href="/home/hak" style='border-style: groove; border-color:white'>학회</a>
+      <a href="/home/somo" style='border-style: groove; border-color:white'>소모임</a>
+      <a href="/home/setting" style='border-style: groove; border-color:white'>설정</a>
+    </div>
+    
+    <!-- Use any element to open the sidenav -->
+    
+    
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <div style='background-color:#ff5858; text-align:center;'>
+         <h2 style='color:white; background-color:#ff5858; margin-top:0px;margin-bottom:2px'>
+    	    <span onclick="openNav()" style='float:left;' class='btn btn-link'><i class="material-icons" style='color:white;'>menu</i></span>못갖춘마디</h2>
+    	 <br>
+    </div>
+    
+    <ul class="tab">
+      <div class='row'>
+        <li><button type='button' class="tablinks btn btn-link bttn" onclick="openCity(event, 'intro')"><b>소개</b></button></li>
+        <li><button type='button' class="tablinks btn btn-link bttn" onclick="openCity(event, 'Paris')"><b>라이브러리</b></button></li>
+        <li><button type='button' class="tablinks btn btn-link bttn" onclick="openCity(event, 'Tokyo')"><b>Q&A</b></button></li>
+      </div>
+    </ul>
+    
+    <div id="intro" class="tabcontent">
+      <img src='/assets/d1.PNG' style= 'margin-left:20%'>
+      <img src='/assets/dongform.PNG' style='margin-left:18%; width:40%; height:40%;'>
+      <p></p>
+      <div class='bdtext' style="width:50vw; margin:auto;"> 
+        <p style='text-align:center'>못갖춘 마디는 성균관대학교 통기타 동아리이며, 1990년대 민중가요 분위기가 강하던 때에 만들어진 것으로 뿌리가 깊습니다.저희 동아리의 가장 큰 행사로는 봄, 가을 정기공연이 있습니다. 그외에도 자선공연, 결혼식 축가, 신입생 오티 공연 등 크고 작은 공연들도 있습니다.</p>
+      </div>
+      
+      
+      
+      <div class='row' style='margin-left:-5%; margin-top:-4%'>
+        <div class='col-md-6 col-xs-6'>
+          <img src='/assets/pnum.PNG' style='width:60%;margin-top:10%; margin-left:57%; margin-right:0'>
+        </div>
+        <div class='col-md-6 col-xs-6'>
+          <img src='/assets/kaka.PNG'style='width:60%;margin-top:10%; margin-left:4%;'>
+        </div>
+      </div>
+      <a href='/home/dongtab/'><img src = '/assets/homebtn.PNG' style='margin-left:40%; margin-top:-3%'></a>
+    </div>
+    
+    <div id="Paris" class="tabcontent" style='background-color:#eeeeee'>
+      <div class='row'>
+        <div class='col-md-6 col-xs-6 imgleft'>
+          <img src='/assets/l1.PNG'>
+          <p><br></p>
+        </div>
+        <div class='col-md-6 col-xs-6 imgleft'>
+          <img src='/assets/l2.PNG'>
+          <p><br></p>
+        </div>
+        <div class='col-md-6 col-xs-6 imgleft' >
+          <img src='/assets/l3.PNG'>
+          <p><br></p>
+        </div>
+        <div class='col-md-6 col-xs-6 imgleft' >
+          <img src='/assets/l4.PNG'>
+          <p><br><br><br><br><br></p>
+        </div>
+      </div>
+       
+    </div>
+    
+    <div id="Tokyo" class="tabcontent">
+      <img src='/assets/qna.PNG' style='margin-left:; width:100%'>
+    </div>
+        
+
+</div>
+
+
+<script>
+
+    /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.body.style.backgroundColor = "white";
+}
+    
+    
+
+
+
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+  
+</script>

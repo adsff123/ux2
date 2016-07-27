@@ -1,0 +1,122 @@
+<div class = 'container'>
+    <!--제목부분-->
+    <div class = 'header' style='text-align:center; background-color:#ff5858;margin-top:3px; margin-bottom:0px'>
+    	<br>
+  	</div>
+      	
+    <div id="mySidenav" class="sidenav" style='background-color:#eeeeee'>
+      <% if user_signed_in? %>
+        <%= current_user.email %>
+        <a href="/users/sign_out"> 로그아웃</a>
+      <% else %>
+        <button onclick= "window.location.href='/users/sign_in'"style='margin-left:17%; border-radius: 5px; width:65%; color:white; text-align:center; background-color:#ff5858' ><h3>로그인 하기</h3></button>
+        <br><br>
+      <% end %>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="/home/index" style='border-style: groove; border-color:white'>Home</a>
+      <a href="/home/notice" style='border-style: groove; border-color:white'>공지사항</a>
+      <a href="/home/dongtab" style='border-style: groove; border-color:white'>동아리</a>
+      <a href="/home/hak" style='border-style: groove; border-color:white'>학회</a>
+      <a href="/home/somo" style='border-style: groove; border-color:white'>소모임</a>
+      <a href="/home/setting" style='border-style: groove; border-color:white'>설정</a>
+    </div>
+    
+    <!-- Use any element to open the sidenav -->
+    
+    
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <div style='background-color:#ff5858; text-align:center;'>
+         <h2 style='color:white; background-color:#ff5858; margin-top:0px;margin-bottom:2px'>
+    	    <span onclick="openNav()" style='float:left;' class='btn btn-link'><i class="material-icons" style='color:white;'>menu</i></span>
+    	    <a href='/home/index' style='color:white;'>학회</a></h2>
+    	 <br>
+    </div>
+    
+  <div style='background-color:#eeeeee;'>
+      <!--동아리게시-->
+      <br>
+      <div class='row'>
+        <div class='card item-card col-md-6 col-xs-6'>
+          <a href='/home/dong'><img src="/assets/d1.PNG" class='img-responsive2 img-rounded'></a>
+          <div class='item-card-body'>
+            <br>
+            <h2>못갖춘마디</h2>
+            <br>
+          </div>
+        </div>
+        
+        <div class='card item-card col-md-6 col-xs-6'>
+          <img src="/assets/d2.png" class='img-responsive2 img-rounded'>
+          <div class='item-card-body'>
+            <br>
+            <h2>JDA</h2>
+            <br>
+          </div>
+        </div>
+        
+        <div class='card item-card col-md-6 col-xs-6'>
+          <img src="/assets/d3.png" class='img-responsive2 img-rounded'>
+          <div class='item-card-body'>
+            <br>
+            <h2>BIOBLAST</h2>
+            <br>
+          </div>
+        </div>
+        
+        <div class='card item-card col-md-6 col-xs-6'>
+          <img src="/assets/d4.png" class='img-responsive2 img-rounded'>
+          <div class='item-card-body'>
+            <br>
+            <h2>STAR</h2>
+
+            <br>
+          </div>
+        </div>
+        
+        <div class='card item-card col-md-6 col-xs-6'>
+          <img src="/assets/d5.png" class='img-responsive2 img-rounded'>
+          <div class='item-card-body'>
+            <br>
+            <h2>마술피리</h2>
+            <br>
+          </div>
+        </div>
+        
+        <div class='card item-card col-md-6 col-xs-6'>
+          <img src="/assets/d6.png" class='img-responsive2 img-rounded'>
+          <div class='item-card-body'>
+            <br>
+            <h2>허밍버즈</h2>
+            <br>
+          </div>
+        </div>
+      </div>
+      
+      <br>
+      <br>
+
+      
+    </div>
+    <br>
+</div> 
+
+
+
+<script>
+    /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.body.style.backgroundColor = "white";
+}
+    
+    
+    
+</script>

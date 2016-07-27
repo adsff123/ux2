@@ -1,0 +1,143 @@
+<div class='container' style='background-color:#eeeeee;'>
+     <!--제목부분-->
+    <div class = 'header' style='text-align:center; background-color:#ff5858;margin-top:3px; margin-bottom:0px'>
+    	<br>
+  	</div>
+      	
+    <div id="mySidenav" class="sidenav" style='background-color:#eeeeee'>
+      <% if user_signed_in? %>
+        <%= current_user.email %>
+        <a href="/users/sign_out"> 로그아웃</a>
+      <% else %>
+        <button onclick= "window.location.href='/users/sign_in'"style='margin-left:17%; border-radius: 5px; width:65%; color:white; text-align:center; background-color:#ff5858' ><h3>로그인 하기</h3></button>
+        <br><br>
+      <% end %>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="/home/index" style='border-style: groove; border-color:white'>Home</a>
+      <a href="/home/notice" style='border-style: groove; border-color:white'>공지사항</a>
+      <a href="/home/dongtab" style='border-style: groove; border-color:white'>동아리</a>
+      <a href="/home/hak" style='border-style: groove; border-color:white'>학회</a>
+      <a href="/home/somo" style='border-style: groove; border-color:white'>소모임</a>
+      <a href="/home/setting" style='border-style: groove; border-color:white'>설정</a>
+    </div>
+    
+    <!-- Use any element to open the sidenav -->
+    
+    
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <div style='background-color:#ff5858; text-align:center;'>
+         <h2 style='color:white; background-color:#ff5858; margin-top:0px;margin-bottom:2px'>
+    	    <span onclick="openNav()" style='float:left;' class='btn btn-link'><i class="material-icons" style='color:white;'>menu</i></span>
+    	    <a href='/home/index' style='color:white;'>공지사항</a></h2>
+    	 <br>
+    </div>
+    
+    
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="#">중요공지</a></li>
+      <li role="presentation"><a href="#">이벤트</a></li>
+    </ul>
+    <table class="table">
+        <th>#</th>
+        <th>제목</th>
+        <th>날짜</th>
+      <tr class="active" height='60'>
+          <td>1</td>
+          <td>[외교부] 2016 한.일.중 대학생 동아리 외교 캠프...</td>
+          <td>2016/07/13</td>
+      </tr>
+      <tr class="active" height='60'>
+          <td>2</td>
+          <td>2016년 하반기 취업동아리 모집</td>
+          <td>2016/06/08</td>
+      </tr>
+      <tr class="active" height='60'>
+          <td>3</td>
+          <td>대학 창업동아리 매거진 학생 기자단 모집 공고(한...</td>
+          <td>2016/06/05</td>
+      </tr>
+      <tr class="active" height='60'>
+        <td>4</td>
+          <td>대학생 테마별 톡톡 멘토링 참여 동아리 모집 안내</td>
+          <td>2016/04/29</td>
+      </tr>
+      <tr class="active" height='60'>
+        <td>5</td>
+          <td>국제 친선동아리 '글로벌 온 뉴스' 대학생 멘토 모...</td>
+          <td>2016/03/17</td>
+      </tr>
+      <tr class="active" height='60'>
+          <td>6</td>
+          <td>[헉술정보관] 2016-1 오거서 동아리 모집</td>
+          <td>2016/03/14</td>
+      </tr>
+      <tr class="active" height='60'>
+          <td>7</td>
+          <td>성균관대학교 동아리 신입부원 모집 홍보부스 기...</td>
+          <td>2016/03/13</td>
+      </tr>
+      <tr class="active" height='60'>
+          <td>8</td>
+          <td>성균관대학교 동아리 신입부원 모집 홍보부스 기...</td>
+          <td>2016/03/12</td>
+      </tr>
+      <tr class="active" height='60'>
+          <td>9</td>
+          <td>성균관대학교 동아리 신입부원 모집 홍보부스 기...</td>
+          <td>2016/03/11</td>
+      </tr>
+      <tr class="active" height='60'>
+          <td>10</td>
+          <td>성균관대학교 동아리 신입부원 모집 홍보부스 기...</td>
+          <td>2016/03/10</td>
+      </tr>
+    </table>
+    
+    <nav>
+      <ul class="pagination">
+        <li>
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    
+</div>
+
+
+
+
+<script>
+    /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.body.style.backgroundColor = "white";
+}
+    
+    
+    
+</script>
+
+    
+
+
